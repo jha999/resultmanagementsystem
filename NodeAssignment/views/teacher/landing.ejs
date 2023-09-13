@@ -1,0 +1,31 @@
+<div >
+  <h2 style="text-align: center; margin-top: 30px;">All Students</h2>
+</div>
+<a href="addstudent" style="margin-left:80%"><button type="submit" class="btn btn-primary">Add Record</button></a>
+
+<div class="tableDiv">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Roll No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Score</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <%  student.forEach(element => { %>
+            <tr class="head">
+                <th scope="row"><%= element.roll %></th>
+                <td><%= element.name %></td>
+                <td><%= new Date(element.dob).toISOString().split('T')[0] %></td>
+                <td><%= element.score %></td>
+                <td><%= element.action %></td>
+                <td><a href="/teacher/edit/<%= element._id %>" class= "btn btn-primary" >Edit</a>
+                  <a href="/teacher/delete/<%= element._id %> " class="btn btn-danger">Delete</a></td>
+              </tr>
+        <%}) %>
+    </tbody>
+  </table>
+</div>

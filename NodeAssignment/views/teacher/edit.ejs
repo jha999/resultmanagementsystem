@@ -1,0 +1,21 @@
+<h3 style="text-align: center; font-family: sans-serif;">Editing Datails of <%= user.name %> </h3>
+<form method="POST" class="addStu" autocomplete="off">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Roll No : </label>
+      <input type="text" name="roll" required class="form-control" value="<%= user.roll %> " id="exampleInputEmail1">
+    </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name : </label>
+        <input type="text" name="name" value="<%= user.name  %> " class="form-control" id="exampleInputEmail1" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">DOB : </label>
+        <input type="text" name="dob" value="<%= new Date(user.dob).toISOString().split('T')[0]  %> " class="form-control" id="exampleInputEmail1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Score : </label>
+        <input type="text" name="score" required value="<%= user.score  %> " class="form-control" id="exampleInputEmail1">
+      </div>
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="/teacher/landing" class="btn btn-primary">View All</a>
+</form>

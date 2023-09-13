@@ -1,0 +1,23 @@
+<div class="profileBox">
+    
+    <h1>Name : <%= one.name %> </h1>
+    <h2>Roll No. : <%= one.roll %> </h2>
+</div>
+<div class="stuTable">
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">S/No</th>
+          <th scope="col">DOB</th>
+          <th scope="col">Score (?/500)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td><%= new Date(one.dob).toISOString().split('T')[0] %></td>
+          <td><%= one.score %></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
